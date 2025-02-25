@@ -5,9 +5,7 @@ import { MdMyLocation } from "react-icons/md";
 import { CgShapeSquare } from "react-icons/cg";  
 import { ContextSource } from "../context/ContextSource";
 import { ContextDestination } from '../context/ContextDestination';
-
-// Dynamic import to prevent SSR issues
-const GooglePlacesAutocomplete = dynamic(() => import('react-google-places-autocomplete'), { ssr: false });
+import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
 
 function InputItem({ type }) {
   const [value, setValue] = useState(null);
