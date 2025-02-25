@@ -1,0 +1,42 @@
+export const CarListData = [
+  {
+    id: 1,
+    name: "Car X",
+    seat: 4,
+    desc: "Affordable, Everyday rides",
+    amount: 1.1,
+    image: "/CarX.png",
+  },
+  {
+    id: 2,
+    name: "Car Comfort",
+    seat: 4,
+    desc: "Newer cars with extra legroom",
+    amount: 1.6,
+    image: "/CarComfort.png",
+  },
+  {
+    id: 3,
+    name: "Car XL",
+    seat: 6,
+    desc: "Spacious rides for groups up to 6",
+    amount: 2.0,
+    image: "/CarXL.png",
+  },
+  {
+    id: 4,
+    name: "Car Black",
+    seat: 4,
+    desc: "Luxury rides with professional drivers",
+    amount: 3.5,
+    image: "/CarBlack.png",
+  },
+  {
+    id: 5,
+    name: "Car Green",
+    seat: 4,
+    desc: "Eco-friendly electric rides",
+    amount: 1.3,
+    image: "/CarGreen.png",
+  },
+];
