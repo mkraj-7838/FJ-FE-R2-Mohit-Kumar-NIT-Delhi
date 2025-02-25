@@ -1,11 +1,10 @@
 "use client"; // Enables client-side rendering
 
 import { useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter, } from "next/navigation";
 
 export default function PaymentPage() {
-  const searchParams = useSearchParams();
-  const amount = searchParams.get("amount") || "200"; // Retrieve the amount from query params, default to ₹200
+  const amount = "200"; // Retrieve the amount from query params, default to ₹200
 
   // State variables for handling card payment details
   const [cardNumber, setCardNumber] = useState("");

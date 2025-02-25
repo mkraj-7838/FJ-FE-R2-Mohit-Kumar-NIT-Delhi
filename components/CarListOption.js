@@ -70,7 +70,7 @@ function CarListOption({ distance, isSharing }) {
           <button
             className="p-3 bg-black text-white rounded-lg text-center"
             onClick={() =>
-              router.push(`/RideBooking?amount=${(selectedCar.amount * distance * 40).toFixed(2)}`)
+              router.push(`/RideBooking`)
             }
           >
             Request {selectedCar.name}

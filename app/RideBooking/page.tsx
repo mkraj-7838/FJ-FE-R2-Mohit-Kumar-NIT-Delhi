@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter, } from "next/navigation";
 
 // Button component with type restrictions for "button", "submit", or "reset"
 interface ButtonProps {
@@ -51,12 +51,11 @@ const Input = ({ value, onChange, placeholder }) => (
 
 export default function RideBooking() {
   const router = useRouter();
-  const searchParams = useSearchParams();
 
   // Get ride details from the URL query parameters
-  const carName = searchParams.get("car") || "Sedan";
-  const amount = searchParams.get("amount") || "200";
-  const eta = searchParams.get("eta") || "5";
+  const carName =  "Sedan";
+  const amount =  "200";
+  const eta = "5";
 
   const [message, setMessage] = useState("");
   const [chatHistory, setChatHistory] = useState([
