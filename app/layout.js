@@ -34,12 +34,6 @@ export default function RootLayout({ children }) {
         <body
           className={`${montserrat.variable} antialiased h-screen overflow-hidden`}
         >
-          <header className="absolute top-0 right-0 p-4 h-16 flex items-center gap-4">
-            <SignedOut>
-              <SignInButton className="bg-[rgb(53,53,53)] text-white px-4 py-2 rounded-lg hover:opacity-80 transition" />
-              <SignUpButton className="bg-[rgb(53,53,53)] text-white px-4 py-2 rounded-lg hover:opacity-80 transition" />
-            </SignedOut>
-          </header>
           <SignedIn>
             <Header />
           </SignedIn>

@@ -6,11 +6,23 @@ export default function Page() {
     <>
     <div>
         <SignedOut>
-            <Image src="/authpage.png" width={900} height={800} alt="Authpage"
-            className='object-contain h-full w-full'/>
-            <div className=' absolute top-20 right-1/3'>
-                <SignIn />
-            </div>
+        <Image 
+          src="/authpage.png" 
+          width={900} 
+          height={800} 
+          alt="Authpage"
+          className="absolute top-0 left-0 w-full h-full object-cover"
+        />
+
+        {/* Sign-in Section */}
+        <div className="relative flex flex-col items-center justify-center z-10  p-10 rounded-lg text-center">
+          {/* Welcome Text */}
+          <h1 className="text-2xl font-bold text-gray-800 mb-4">
+            Welcome to Rideshare
+          </h1>
+          {/* Sign-in Form */}
+          <SignIn />
+        </div>
         </SignedOut>
         
     </div>

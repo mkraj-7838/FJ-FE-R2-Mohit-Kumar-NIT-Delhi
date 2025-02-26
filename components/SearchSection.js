@@ -45,7 +45,7 @@ function SearchSection() {
   }, [source, destination]);
 
   return (
-    <div className="relative">
+    <div className="relative ">
       <div className="p-2 md:p-4 border-[5px] border-gray-700 rounded-xl">
         {/* Header with "Get a ride" and Ride Sharing Toggle */}
         <div className="flex items-center justify-between my-2">
@@ -78,7 +78,7 @@ function SearchSection() {
 
       {/* Advertisement Box - Only Show Before Search */}
       {distance === null && (
-        <div className=" pl-1 mt-10">
+        <div className=" pl-1 mt-4">
         <div className="bg-gray-900 p-6 rounded-lg shadow-lg border border-gray-700">
           <h2 className="text-xl font-bold mb-4">Summary</h2>
           

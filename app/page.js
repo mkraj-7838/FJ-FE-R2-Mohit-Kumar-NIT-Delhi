@@ -11,30 +11,25 @@ export default function Home() {
   const [destination, setDestination] = useState([]);
 
   return (
-
-    
     <ContextSource.Provider value={{ source, setSource }}>
-    <ContextDestination.Provider value={{ destination, setDestination }}>
-      <LoadScript 
-        libraries={["places"]} 
-        googleMapsApiKey={"AIzaSyDRRHxHjC3zPBj2th5dluhHMdaiA8N4Ics"}
-      >
-        <div className="p-4 sm:p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          
-          {/* Search Section - Full width on small screens, splits on larger screens */}
-          <div className="w-full">
-            <SearchSection />
+      <ContextDestination.Provider value={{ destination, setDestination }}>
+        <LoadScript
+          libraries={["places"]}
+          googleMapsApiKey={"AIzaSyDRRHxHjC3zPBj2th5dluhHMdaiA8N4Ics"}
+        >
+          <div className="h-[90vh] overflow-y-auto p-2 sm:p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            {/* Search Section - Full width on small screens, splits on larger screens */}
+            <div className="w-full">
+              <SearchSection />
+            </div>
+
+            {/* Google Map Section - Responsive */}
+            <div className="md:col-span-2">
+              <GoogleMapSection />
+            </div>
           </div>
-  
-          {/* Google Map Section - Responsive */}
-          <div className="md:col-span-2 h-full">
-          <GoogleMapSection />
-        </div>
-  
-        </div>
-      </LoadScript>
-    </ContextDestination.Provider>
-  </ContextSource.Provider>
-  
+        </LoadScript>
+      </ContextDestination.Provider>
+    </ContextSource.Provider>
   );
 }

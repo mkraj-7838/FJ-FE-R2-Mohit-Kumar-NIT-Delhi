@@ -17,7 +17,7 @@ function GoogleMapSection() {
   // Define the map container size dynamically based on screen width
   const containerStyle = {
     width: "100%",
-    height: window.innerWidth * 0.45, // Adjust height based on screen size
+    height: window.innerWidth < 768 ? "50vh" : "85vh", // Adjust height based on screen size
   };
 
   // Set the initial center position of the map (Delhi by default)
