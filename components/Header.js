@@ -52,22 +52,26 @@ function Header() {
 
             {/* Mobile Menu (Visible when isOpen is true) */}
             {isOpen && (
-                <div className="absolute top-16 left-0 w-full bg-white dark:bg-black shadow-md p-5 flex flex-col items-center gap-4 md:hidden">
-                    {headerMenu.map((item) => (
-                        <div
-                            key={item.id}
-                            className="flex gap-2 items-center cursor-pointer hover:text-gray-500 dark:hover:text-gray-300"
-                            onClick={() => {
-                                setIsOpen(false);
-                                router.push(item.route);
-                                if (item.name === "Ride") window.location.reload(); // Refresh page when selecting "Ride"
-                            }}
-                        >
-                            <Image src={item.icon} width={17} height={17} alt={item.name} />
-                            <h2 className="text-[14px] font-medium">{item.name}</h2>
-                        </div>
-                    ))}
-                </div>
+                <div className="absolute top-16 left-0 w-full bg-white dark:bg-black shadow-md p-5 flex flex-col items-center gap-4 md:hidden z-50">
+                {headerMenu.map((item) => (
+                  <div
+                    key={item.id}
+                    className="flex gap-2 items-center cursor-pointer hover:text-gray-500 dark:hover:text-gray-300"
+                    onClick={() => {
+                      setIsOpen(false);
+                      router.push(item.route);
+            
+                      // Reload only if the user is already on the "Ride" page
+                      if (item.route === "/" && window.location.pathname === "/") {
+                        window.location.reload();
+                      }
+                    }}
+                  >
+                    <Image src={item.icon} width={17} height={17} alt={item.name} />
+                    <h2 className="text-[14px] font-medium">{item.name}</h2>
+                  </div>
+                ))}
+              </div>
             )}
         </div>
     );

@@ -26,7 +26,7 @@ const Button = ({
   onClick?: () => void;
 }) => (
   <button
-    className="p-3  px-4 py-2 bg-white text-black font-medium rounded-md hover:bg-gray-300 transition"
+    className="p-3 px-4 py-2 bg-white text-black font-medium rounded-md hover:bg-gray-300 transition"
     onClick={onClick}
   >
     {children}
@@ -38,12 +38,10 @@ const Textarea = ({
   value,
   onChange,
   placeholder,
-  className,
 }: {
   value: string;
   onChange: (e: any) => void;
   placeholder: string;
-  className?: string;
 }) => (
   <textarea
     className="w-full p-2 border border-gray-500 bg-black text-white rounded-md"
@@ -55,7 +53,7 @@ const Textarea = ({
 
 // Card Components
 const Card = ({ children }: { children: React.ReactNode }) => (
-  <div className=" border border-gray-700 rounded-lg shadow-md w-full bg-black text-white p-6">
+  <div className="border border-gray-700 rounded-lg shadow-md w-full bg-black text-white p-6">
     {children}
   </div>
 );
@@ -63,7 +61,7 @@ const CardHeader = ({ children }: { children: React.ReactNode }) => (
   <div className="mb-4">{children}</div>
 );
 const CardTitle = ({ children }: { children: React.ReactNode }) => (
-  <h2 className=" text-lg font-semibold">{children}</h2>
+  <h2 className="text-lg font-semibold">{children}</h2>
 );
 const CardDescription = ({ children }: { children: React.ReactNode }) => (
   <p className="text-gray-400">{children}</p>
@@ -122,22 +120,6 @@ const initialRideHistory = [
     rating: 4,
     feedback: "",
   },
-  {
-    id: 7,
-    date: "2024-06-03",
-    fare: 30.0,
-    driver: "Jane Smith",
-    rating: 1,
-    feedback: "",
-  },
-  {
-    id: 8,
-    date: "2024-05-20",
-    fare: 22.0,
-    driver: "Chris Wilson",
-    rating: 5,
-    feedback: "",
-  },
 ];
 
 export default function History() {
@@ -172,78 +154,68 @@ export default function History() {
   };
 
   return (
-    <div className="flex min-h-screen bg-black text-white p-6">
-    {/* Left - Ride History */}
-    <div className="w-2/3 pr-4">
-      <h1 className="text-4xl font-bold mb-6">Ride History</h1>
-  
-      {/* Scrollable Ride List */}
-      <div className="h-[75vh] overflow-y-auto bg-gray-900 p-4 rounded-lg shadow-lg border border-gray-700">
-        <div className="flex flex-col gap-6">
-          {rideHistory.map((ride) => (
-            <Card key={ride.id} >
-              <CardHeader>
-                <CardTitle >Ride on {ride.date}</CardTitle>
-                <CardDescription >Driver: {ride.driver}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="mb-4 text-gray-300">Fare: <span className="font-semibold">${ride.fare.toFixed(2)}</span></p>
-  
-                {/* Star Rating */}
-                <div className="flex mb-4">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <Star
-                      key={star}
-                      className={`cursor-pointer h-6 w-6 transition ${
-                        star <= ride.rating ? "text-yellow-400 fill-yellow-400" : "text-gray-500"
-                      }`}
-                      onClick={() => handleRating(ride.id, star)}
-                    />
-                  ))}
-                </div>
-  
-                {/* Feedback Input */}
-                <Textarea
-                  placeholder="Leave your feedback here..."
-                  value={ride.feedback}
-                  onChange={(e) => handleFeedback(ride.id, e.target.value)}
-                  className="mb-4 w-full p-3 rounded-md border border-gray-600 bg-black text-white"
-                />
-  
-                {/* Submit Button */}
-                <Button onClick={() => submitFeedback(ride.id)} >
-                  Submit Feedback
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
+    <div className="flex flex-col-reverse lg:flex-row min-h-screen h-screen overflow-y-auto bg-black text-white p-6">
+      {/* Ride History Section */}
+      <div className="w-full lg:w-2/3 lg:pr-4 mb-6 lg:mb-0  ">
+        <h1 className="text-4xl font-bold m-2">Ride History</h1>
+        <div className="h-[80vh] overflow-y-auto bg-gray-900 p-4 rounded-lg shadow-lg border border-gray-700">
+          <div className="flex flex-col gap-6">
+            {rideHistory.map((ride) => (
+              <Card key={ride.id}>
+                <CardHeader>
+                  <CardTitle>Ride on {ride.date}</CardTitle>
+                  <CardDescription>Driver: {ride.driver}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="mb-4 text-gray-300">
+                    Fare:{" "}
+                    <span className="font-semibold">
+                      ${ride.fare.toFixed(2)}
+                    </span>
+                  </p>
+                  <div className="flex mb-4">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <Star
+                        key={star}
+                        className={`cursor-pointer h-6 w-6 transition ${
+                          star <= ride.rating
+                            ? "text-yellow-400 fill-yellow-400"
+                            : "text-gray-500"
+                        }`}
+                        onClick={() => handleRating(ride.id, star)}
+                      />
+                    ))}
+                  </div>
+                  <Textarea
+                    placeholder="Leave your feedback here..."
+                    value={ride.feedback}
+                    onChange={(e) => handleFeedback(ride.id, e.target.value)}
+                  />
+                  <Button onClick={() => submitFeedback(ride.id)}>
+                    Submit Feedback
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="w-full lg:w-1/3 lg:pl-4">
+        <div className="bg-gray-900 p-3 rounded-lg shadow-lg border border-gray-700">
+          <h2 className="text-3xl font-bold mb-4">Summary</h2>
+          <p className="text-lg font-semibold text-gray-300">Total Rides: {rideHistory.length}</p>
+          <div className="">
+            <p className="text-lg font-semibold text-gray-300">
+              Total KM Traveled: {(rideHistory.length * 8.5).toFixed(1)} km
+            </p>
+          </div>
+          <div>
+            <p className="text-lg font-semibold text-gray-300">
+              Money Saved (Compared to Cabs): ${(rideHistory.length * 5).toFixed(2)}
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  
-    {/* Right - Summary Section */}
-    <div className="w-1/3 pl-4 mt-16">
-      <div className="bg-gray-900 p-6 rounded-lg shadow-lg border border-gray-700">
-        <h2 className="text-3xl font-bold mb-4">Summary</h2>
-        
-        <div className="mb-4">
-          <p className="text-lg font-semibold text-gray-300">Total Rides</p>
-          <p className="text-2xl font-bold">{rideHistory.length}</p>
-        </div>
-  
-        <div className="mb-4">
-          <p className="text-lg font-semibold text-gray-300">Total KM Traveled</p>
-          <p className="text-2xl font-bold">{(rideHistory.length * 8.5).toFixed(1)} km</p>
-        </div>
-  
-        <div>
-          <p className="text-lg font-semibold text-gray-300">Money Saved (Compared to Cabs)</p>
-          <p className="text-2xl font-bold">${(rideHistory.length * 5).toFixed(2)}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-
   );
 }
