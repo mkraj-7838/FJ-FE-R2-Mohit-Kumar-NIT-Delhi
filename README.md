@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🚗 Ride-Sharing-App
 
-## Getting Started
+![Ride Sharing Banner](https://source.unsplash.com/featured/?ride,car)
 
-First, run the development server:
+A web application frontend where users can book rides, track their ride history, and manage their profiles.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 📌 Table of Contents
+- [📖 Project Description](#project-description)
+- [⚙️ Installation](#installation)
+- [🚀 Usage](#usage)
+- [✨ Features](#features)
+- [🛠 Technologies Used](#technologies-used)
+- [📜 License](#license)
+- [📧 Contact Information](#contact-information)
+
+## 📖 Project Description
+Ride-Sharing-App is a web-based frontend application that enables users to book rides, manage their profiles, track ride history, and utilize features like ride-sharing, payment integration, and real-time notifications.
+
+## ⚙️ Installation
+To set up the project locally, follow these steps:
+
+### Prerequisites
+- Node.js (v16 or later)
+- npm or yarn
+- Clerk API credentials for authentication
+
+### Steps
+```sh
+# Clone the repository
+git clone https://github.com/your-repo/ride-sharing-app.git
+
+# Navigate to the project directory
+cd ride-sharing-app
+
+# Install dependencies
+npm install  # or yarn install
+
+# Start the development server
+npm start  # or yarn start
 ```
+The app should now be running on [`http://localhost:3000`](http://localhost:3000).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Usage
+1. 🔑 Register/Login using Clerk authentication.
+2. 📍 Enter pickup and destination locations to book a ride.
+3. 💰 View estimated fare and choose a ride type.
+4. 📜 Track ride history and manage profile details.
+5. 🚘 Utilize ride-sharing, chat, and feedback features.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## ✨ Features
+- 🔐 **User Authentication:** Secure login and profile management via Clerk API.
+- 🚖 **Ride Booking:** Set pickup & destination, view route and fare estimation.
+- 📊 **Ride History:** Access previous ride details and statistics.
+- 👤 **Profile Management:** Update user details seamlessly.
+- 💳 **Payment Integration:** Dummy payment gateway for seamless transactions.
+- 🏎 **Ride Sharing:** Share rides with others and split fares (groups of 1-3).
+- ⭐ **Feedback System:** Rate rides and leave driver comments.
+- 🔔 **Notification System:** Toasts/alerts for success and errors.
+- 💬 **Chat Support:** Real-time chat between driver and rider.
+- 📱 **Mobile Responsiveness:** Fully optimized for all screen sizes.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠 Technologies Used
+- **Frontend:** React.js, TypeScript
+- **State Management:** React Context API
+- **Authentication:** Clerk API
+- **UI Components:** Tailwind CSS
+- **Routing:** React Router
+- **API Integration:** Axios
+- **Payment Gateway:** Dummy payment integration
+- **Notifications:** Alerts
 
-## Learn More
+## 📜 License
+This project is licensed under the MIT License.
 
-To learn more about Next.js, take a look at the following resources:
+## 📧 Contact Information
+For inquiries or support, contact:
+- 📩 **Email:** [your-email@example.com](mailto:prajapati.mohit.official@gmail.com)
+- 🐙 **GitHub:** [your-github-profile](https://github.com/mkraj-7838)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+💡 *Happy Coding! 🚀*
