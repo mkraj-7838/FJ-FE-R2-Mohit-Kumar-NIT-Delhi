@@ -22,7 +22,7 @@ function Header() {
             {/* Left: Logo and Desktop Menu */}
             <div className="flex items-center gap-24">
                 {/* Logo */}
-                <Image src="/logo.png" width={150} height={70} alt="logo" />
+                <Image src="/RideEasy.png" width={150} height={70} alt="logo" />
 
                 {/* Desktop Menu (Hidden on small screens) */}
                 <div className="hidden md:flex gap-6 items-center">
