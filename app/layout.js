@@ -18,8 +18,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: "Ride-Share",
-  description: "Ride sharing app with progressive developer",
+  title: "RideEasy",
+  description: "Ride-Booking-Sharing app",
   icons: "/Rideshare.ico", // ✅ Add this line
 };
 
