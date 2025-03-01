@@ -18,7 +18,7 @@ function Header() {
     ];
 
     return (
-        <div className="p-5 pb-3 pl-10 border-b-4 border-gray-300 dark:border-gray-700 flex items-center justify-between bg-white dark:bg-black text-black dark:text-white">
+        <div className="p-2 pl-10 border-b-4 border-gray-300 dark:border-gray-700 flex items-center justify-between bg-white dark:bg-black text-black dark:text-white">
             {/* Left: Logo and Desktop Menu */}
             <div className="flex items-center gap-24">
                 {/* Logo */}
