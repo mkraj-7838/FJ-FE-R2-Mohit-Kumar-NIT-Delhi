@@ -1,6 +1,6 @@
-# 🚗 Ride-Sharing-App
+# 🚗 RideEasy (Ride-Booking-and-Sharing-App)
 
-![Ride Sharing Banner](https://source.unsplash.com/featured/?ride,car)
+![Ride Sharing Banner](Ride-Easy-Homepage.png)
 
 A web application frontend where users can book rides, track their ride history, and manage their profiles.
 
@@ -38,7 +38,6 @@ npm install  # or yarn install
 # Start the development server
 npm start  # or yarn start
 ```
-The app should now be running on [`http://localhost:3000`](http://localhost:3000).
 
 ## 🚀 Usage
 1. 🔑 Register/Login using Clerk authentication.
@@ -65,7 +64,7 @@ The app should now be running on [`http://localhost:3000`](http://localhost:3000
 - **Authentication:** Clerk API
 - **UI Components:** Tailwind CSS
 - **Routing:** React Router
-- **API Integration:** Axios
+- **API Integration:** Google Map API
 - **Payment Gateway:** Dummy payment integration
 - **Notifications:** Alerts
 
