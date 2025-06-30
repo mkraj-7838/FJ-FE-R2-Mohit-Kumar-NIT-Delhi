@@ -73,8 +73,8 @@ This project is licensed under the MIT License.
 
 ## 📧 Contact Information
 For inquiries or support, contact:
-- 📩 **Email:** [your-email@example.com](mailto:prajapati.mohit.official@gmail.com)
-- 🐙 **GitHub:** [your-github-profile](https://github.com/mkraj-7838)
+- 📩 **Email:** [mail](mailto:prajapati.mohit.official@gmail.com)
+- 🐙 **GitHub:** [github](https://github.com/mkraj-7838)
 
 ---
 
